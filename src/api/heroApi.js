@@ -561,6 +561,7 @@ export const getProductStrengthData = async () => {
       const data = result.data;
       return {
         heading: data.heading || "Why the Indian market is Best?",
+        subheading: data.description || data.sub_heading || "",
         cards: data.cards
           ? data.cards.map((card, index) => ({
               id: index + 1,

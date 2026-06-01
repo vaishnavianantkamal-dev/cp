@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
   const heading = data.heading || "Why Choose Us?";
 
   return (
-    <div className="bg-linear-to-b from-[rgba(255,40,1,0.12)] via-white to-[rgba(67,67,67,0.08)] min-h-screen flex items-center py-14 md:py-20 px-4 md:px-6 lg:px-8 relative overflow-hidden">
+    <div className="bg-linear-to-b from-[rgba(255,40,1,0.12)] via-white to-[rgba(67,67,67,0.08)] min-h-screen flex items-center py-14 md:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Decorative background blurs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-5 left-5 w-80 h-80 bg-[#FF2801] rounded-full blur-3xl opacity-15" />

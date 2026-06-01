@@ -47,7 +47,7 @@ export default function PopularProductsGrid() {
   }
 
   return (
-    <div className="w-full bg-white py-6 md:py-6 px-4 md:px-8">
+    <div className="w-full bg-white py-6 md:py-6 px-4 sm:px-6 lg:px-8">
       <Motion.div
         className="max-w-7xl mx-auto"
         variants={containerVariants}

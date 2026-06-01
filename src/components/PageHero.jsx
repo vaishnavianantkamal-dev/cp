@@ -45,7 +45,7 @@ export function PageHero({
 
       {/* Content */}
       <div className="relative z-10 w-full">
-        <div className="mx-auto w-full max-w-7xl px-6 py-20 md:py-20">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-20">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 pt-32 md:pt-20">
             <div className="max-w-3xl">
               <h1 className="text-4xl font-bold text-white md:text-5xl">

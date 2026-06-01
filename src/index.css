@@ -112,6 +112,12 @@ button {
   cursor: pointer;
 }
 
+/* Justify body/description text across all sections */
+p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 /* Horizontal marquee for the ProductMarquee strip */
 @keyframes marquee {
   0% {

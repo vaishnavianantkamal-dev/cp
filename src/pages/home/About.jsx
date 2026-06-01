@@ -55,7 +55,7 @@ function PromoBanner({
       {/* Top-left brand accent stripe */}
       <div className="absolute left-0 top-0 h-1.5 w-32 rounded-tl-3xl bg-linear-to-r from-[#FF2801] to-white/30" />
 
-      <div className={`relative z-10 flex h-full w-full ${alignClass} flex-col justify-center px-6 sm:px-8 md:px-10`}>
+      <div className={`relative z-10 flex h-full w-full ${alignClass} flex-col justify-center px-4 sm:px-6 lg:px-8`}>
         {badge && (
           <span className="inline-flex items-center gap-2 rounded-full bg-[#FF2801] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white shadow">
             <Sparkles size={12} />

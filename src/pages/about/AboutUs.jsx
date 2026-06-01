@@ -167,7 +167,7 @@ const AboutUs = () => {
           <div className="absolute top-40 -left-16 h-80 w-80 rounded-full bg-[#FF2801] opacity-[0.06] blur-3xl" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-8 pt-14 md:pt-20 pb-28 md:pb-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 md:pt-20 pb-28 md:pb-36">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* LEFT — content */}
             <motion.div
@@ -247,7 +247,7 @@ const AboutUs = () => {
       </section>
 
       {/* ===== STATS — elevated cards overlapping the hero ===== */}
-      <section className="relative z-10 -mt-12 sm:-mt-16 lg:-mt-20 px-6 md:px-8">
+      <section className="relative z-10 -mt-12 sm:-mt-16 lg:-mt-20 px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -285,7 +285,7 @@ const AboutUs = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
 
@@ -376,7 +376,7 @@ const AboutUs = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-120px" }}
-          className="max-w-7xl mx-auto px-6 md:px-8 py-14 md:py-16"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {visionCards.map((card, index) => {
@@ -418,7 +418,7 @@ const AboutUs = () => {
       {/* ===== VALUES — icon grid ===== */}
       {values.cards && values.cards.length > 0 && (
         <section className="bg-linear-to-b from-[rgba(67,67,67,0.05)] to-white py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center md:mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
                 {values.heading}

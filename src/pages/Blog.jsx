@@ -67,7 +67,7 @@ const BlogPage = () => {
         </div>
       </PageHero>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-14 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
 
         {/* ── Section header ── */}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-8">

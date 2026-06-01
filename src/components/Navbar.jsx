@@ -12,7 +12,7 @@ import {
   Youtube,
   Globe,
 } from "lucide-react";
-import Logo from "/logo4.png";
+import Logo from "/reallogo1.png";
 import { SiGoogletranslate } from "react-icons/si";
 
 export default function Navbar() {
@@ -241,8 +241,7 @@ export default function Navbar() {
                 <img
                   src={Logo}
                   alt="Covenant Peniel Exim"
-                  className="h-16 w-auto object-contain"
-                  style={{ imageRendering: "auto" }}
+                  className="h-12 w-12 object-contain"
                 />
               </Link>
 

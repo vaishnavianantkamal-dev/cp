@@ -65,7 +65,7 @@ export default function ProductRange() {
   const categories = allCategories.slice(0, 8);
 
   if (loading) {
-    return <LoadingSpinner className="min-h-100" />;
+    return <LoadingSpinner className="min-h-96" />;
   }
 
   if (!categories.length) {

@@ -153,7 +153,7 @@ export default function ContactBranches() {
               </div>
 
               {/* Map */}
-              <div className="w-full h-110 rounded-2xl overflow-hidden shadow-md border-2 border-[#FF2801]/40">
+              <div className="w-full h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-md border-2 border-[#FF2801]/40">
                 <iframe
                   src="https://www.google.com/maps?q=Chinnaravuru,+Tenali,+Andhra+Pradesh+522201&output=embed"
                   width="100%"

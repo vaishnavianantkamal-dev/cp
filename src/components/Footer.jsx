@@ -13,8 +13,8 @@ import {
   ChevronRight,
   ArrowUp,
 } from "lucide-react";
-import footerImg from "../assets/footer-bg.png";
-import Logo from "/logo4.png";
+import footerBg from "../assets/slider-3.jpg";
+import Logo from "/reallogo1.png";
 
 export default function OMKARAIMPEXFooter() {
   const _motion = motion;
@@ -63,7 +63,7 @@ export default function OMKARAIMPEXFooter() {
     },
     hover: {
       x: 5,
-      color: "#059669",
+      color: "#FF2801",
       transition: { duration: 0.2 },
     },
   };
@@ -77,8 +77,7 @@ export default function OMKARAIMPEXFooter() {
     },
     hover: {
       scale: 1.2,
-      rotate: 360,
-      backgroundColor: "#059669",
+      backgroundColor: "#FF2801",
       transition: { duration: 0.3 },
     },
   };
@@ -113,34 +112,29 @@ export default function OMKARAIMPEXFooter() {
   };
 
   return (
-    <footer className="relative text-slate-900 overflow-hidden border-t border-gray-200">
-      {/* Background Image with Overlay */}
+    <footer className="relative text-slate-900 overflow-hidden">
+      {/* Footer background photo */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
         <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: `url(${footerImg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.15,
-          }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${footerBg})` }}
         />
+        {/* Dark overlay so text stays readable over the vibrant photo */}
+        <div className="absolute inset-0 bg-white/70" />
       </div>
 
-      {/* <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none opacity-[0.08]">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-red-600 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-blue-600 rounded-full blur-3xl" />
-      </div> */}
+      {/* Slim brand accent bar */}
+      <div className="h-1 w-full bg-linear-to-r from-[#FF2801] via-[#FF2801]/70 to-[#434343]" />
 
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
           >
             {/* About Section */}
             <motion.div variants={columnVariants} className="lg:col-span-1">
@@ -153,8 +147,7 @@ export default function OMKARAIMPEXFooter() {
                 <img
                   src={Logo}
                   alt="Covenant Peniel Exim Pvt Ltd"
-                  className="h-72 md:h-80 w-auto object-contain"
-                  style={{ imageRendering: "auto" }}
+                  className="h-24 w-24 object-contain"
                 />
                 <p className="mt-2 text-lg md:text-xl font-extrabold tracking-wide text-[#434343] uppercase leading-tight">
                   Covenant Peniel Exim <span className="text-[#FF2801]">Pvt Ltd.</span>
@@ -203,41 +196,18 @@ export default function OMKARAIMPEXFooter() {
                   </motion.a>
                 ))}
               </div>
-
-              {/* QR Code Section */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8"
-              >
-                <h5 className="text-sm font-semibold text-slate-900 mb-3">
-                  Download Our Brochure
-                </h5>
-                <div className="bg-white p-4 rounded-lg shadow-md ring-1 ring-black/10 inline-block">
-                  <img
-                    src="/Oceanmark-Exim-Brochure.png"
-                    alt="QR Code for Brochure"
-                    loading="lazy"
-                    className="w-32 h-32 object-contain"
-                  />
-                  {/* <p className="text-xs text-slate-600 text-center mt-2">
-                    Scan to download brochure
-                  </p> */}
-                </div>
-              </motion.div>
             </motion.div>
 
             {/* Information Section */}
             <motion.div variants={columnVariants}>
               <div className="mb-8">
-                <h4 className="text-xl font-bold text-slate-900 mb-3 relative pb-3">
+                <h4 className="relative mb-5 pb-3 text-sm font-bold uppercase tracking-[0.15em] text-slate-900">
                   Information
                   <motion.div
                     initial={{ width: 0 }}
-                    whileInView={{ width: "60px" }}
+                    whileInView={{ width: "32px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="absolute bottom-0 left-0 h-1 bg-red-500 rounded-full"
+                    className="absolute bottom-0 left-0 h-0.5 bg-[#FF2801] rounded-full"
                   />
                 </h4>
               </div>
@@ -247,13 +217,13 @@ export default function OMKARAIMPEXFooter() {
                     key={index}
                     variants={linkVariants}
                     whileHover="hover"
-                    className="flex items-center gap-2 text-slate-700 hover:text-red-700 cursor-pointer transition-colors"
+                    className="flex items-center gap-2 text-slate-700 hover:text-[#FF2801] cursor-pointer transition-colors"
                   >
-                    <ChevronRight size={16} />
+                    <ChevronRight size={16} className="text-[#FF2801] shrink-0" />
                     {item.label === "Become Supplier" ? (
                       <button
                         onClick={() => setIsSupplierFormOpen(true)}
-                        className="text-left hover:text-red-700 transition-colors"
+                        className="text-left hover:text-[#FF2801] transition-colors"
                       >
                         {item.label}
                       </button>
@@ -270,13 +240,13 @@ export default function OMKARAIMPEXFooter() {
             {/* Products Range Section */}
             <motion.div variants={columnVariants}>
               <div className="mb-8">
-                <h4 className="text-xl font-bold text-slate-900 mb-3 relative pb-3">
+                <h4 className="relative mb-5 pb-3 text-sm font-bold uppercase tracking-[0.15em] text-slate-900">
                   Products Range
                   <motion.div
                     initial={{ width: 0 }}
-                    whileInView={{ width: "60px" }}
+                    whileInView={{ width: "32px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="absolute bottom-0 left-0 h-1 bg-red-500 rounded-full"
+                    className="absolute bottom-0 left-0 h-0.5 bg-[#FF2801] rounded-full"
                   />
                 </h4>
               </div>
@@ -286,9 +256,9 @@ export default function OMKARAIMPEXFooter() {
                     key={index}
                     variants={linkVariants}
                     whileHover="hover"
-                    className="flex items-center gap-2 text-slate-700 hover:text-red-700 cursor-pointer transition-colors"
+                    className="flex items-center gap-2 text-slate-700 hover:text-[#FF2801] cursor-pointer transition-colors"
                   >
-                    <ChevronRight size={16} />
+                    <ChevronRight size={16} className="text-[#FF2801] shrink-0" />
                     <Link
                       to={`/products/${item.label
                         .toLowerCase()
@@ -304,13 +274,13 @@ export default function OMKARAIMPEXFooter() {
             {/* Get In Touch Section */}
             <motion.div variants={columnVariants}>
               <div className="mb-8">
-                <h4 className="text-xl font-bold text-slate-900 mb-3 relative pb-3">
+                <h4 className="relative mb-5 pb-3 text-sm font-bold uppercase tracking-[0.15em] text-slate-900">
                   Stay Connected
                   <motion.div
                     initial={{ width: 0 }}
-                    whileInView={{ width: "60px" }}
+                    whileInView={{ width: "32px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="absolute bottom-0 left-0 h-1 bg-red-500 rounded-full"
+                    className="absolute bottom-0 left-0 h-0.5 bg-[#FF2801] rounded-full"
                   />
                 </h4>
               </div>
@@ -325,7 +295,7 @@ export default function OMKARAIMPEXFooter() {
                 >
                   <MapPin
                     size={20}
-                    className="text-red-500 shrink-0 mt-1"
+                    className="text-[#FF2801] shrink-0 mt-1"
                   />
                   <div>
                     <p className="font-semibold text-slate-900 text-sm mb-1">
@@ -346,15 +316,15 @@ export default function OMKARAIMPEXFooter() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="flex gap-3"
                 >
-                  <Phone size={20} className="text-red-500 shrink-0 mt-1" />
+                  <Phone size={20} className="text-[#FF2801] shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-slate-900 text-sm mb-1">
                       PHONE NUMBER:
                     </p>
-                    <p className="text-slate-700 text-sm hover:text-red-700 cursor-pointer transition-colors">
+                    <p className="text-slate-700 text-sm hover:text-[#FF2801] cursor-pointer transition-colors">
                       +91 8885 111 263
                     </p>
-                    <p className="text-slate-700 text-sm hover:text-red-700 cursor-pointer transition-colors">
+                    <p className="text-slate-700 text-sm hover:text-[#FF2801] cursor-pointer transition-colors">
                       +91 8121 414 235
                     </p>
                     <p className="text-slate-500 text-xs mt-1">
@@ -370,12 +340,12 @@ export default function OMKARAIMPEXFooter() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   className="flex gap-3"
                 >
-                  <Mail size={20} className="text-red-500 shrink-0 mt-1" />
+                  <Mail size={20} className="text-[#FF2801] shrink-0 mt-1" />
                   <div>
                     <p className="font-semibold text-slate-900 text-sm mb-1">
                       EMAIL:
                     </p>
-                    <p className="text-slate-700 text-sm hover:text-red-700 cursor-pointer transition-colors">
+                    <p className="text-slate-700 text-sm hover:text-[#FF2801] cursor-pointer transition-colors">
                       sales@covenantpeniel.com
                     </p>
                   </div>
@@ -385,15 +355,25 @@ export default function OMKARAIMPEXFooter() {
           </motion.div>
         </div>
 
+        {/* Divider */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ duration: 0.6 }}
+            className="h-px bg-linear-to-r from-transparent via-slate-300 to-transparent origin-left"
+          />
+        </div>
+
         {/* Bottom Footer */}
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row items-center justify-between gap-6"
+            className="flex flex-col md:flex-row items-center justify-between gap-4"
           >
-            <p className="text-slate-700 text-sm text-center md:text-left">
+            <p className="text-slate-600 text-sm text-center md:text-left">
               © 2026{" "}
               <span className="font-semibold text-slate-900">
                 Covenant Peniel Exim Pvt Ltd
@@ -401,21 +381,13 @@ export default function OMKARAIMPEXFooter() {
               , Designed & Developed by{" "}
               <a
                 href="#"
-                className="text-red-500 hover:text-red-400 font-semibold transition-colors"
+                className="text-[#FF2801] hover:text-[#e62500] font-semibold transition-colors"
               >
                 AnantKamal Software Labs
               </a>
             </p>
           </motion.div>
         </div>
-
-        {/* Divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.6 }}
-          className="h-px bg-linear-to-r from-transparent via-slate-300 to-transparent origin-left"
-        />
       </div>
 
       <AnimatePresence>
@@ -425,7 +397,7 @@ export default function OMKARAIMPEXFooter() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-15 z-50 p-3 rounded-full bg-[#434343] text-white shadow-lg hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+            className="fixed bottom-8 right-15 z-50 p-3 rounded-full bg-[#434343] text-white shadow-lg hover:bg-[#FF2801] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF2801] focus:ring-offset-2"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >

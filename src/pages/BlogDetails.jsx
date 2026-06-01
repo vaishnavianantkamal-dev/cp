@@ -50,7 +50,7 @@ export default function BlogDetails() {
           overlayOpacity={45}
           className="min-h-64 md:min-h-72"
         />
-        <div className="max-w-4xl mx-auto px-4 md:px-8 py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <Link
             to="/blogs"
             className="inline-flex items-center gap-2 rounded-full bg-[#434343] px-6 py-3 text-white font-semibold hover:bg-[#2a2a2a] transition duration-300"
@@ -80,7 +80,7 @@ export default function BlogDetails() {
         priority={true}
       />
 
-      <div className="max-w-4xl mx-auto px-4 md:px-8 py-10 md:py-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <div className="mb-8 flex flex-wrap items-center gap-4 text-xs md:text-sm text-slate-600">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 ring-1 ring-slate-200">
             <User size={14} />
