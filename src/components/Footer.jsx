@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import footerBg from "../assets/slider-3.jpg";
 import Logo from "/reallogo1.png";
+import { useProductCategories } from "../hooks/useApi";
 
 export default function OMKARAIMPEXFooter() {
   const _motion = motion;
@@ -82,6 +83,19 @@ export default function OMKARAIMPEXFooter() {
     },
   };
 
+  const { data: categoriesData = [] } = useProductCategories();
+
+  const productCategoriesFallback = [
+    { name: "Grains and Cereal", slug: "grains-and-cereal" },
+    { name: "Pulses", slug: "pulses" },
+    { name: "Spices", slug: "spices" },
+    { name: "Fruits", slug: "fruits" },
+    { name: "Vegetables", slug: "vegetables" },
+    { name: "Dehydrated Products", slug: "dehydrated-products" },
+  ];
+
+  const categories = categoriesData.length > 0 ? categoriesData : productCategoriesFallback;
+
   // Navigation data
   const footerData = {
     information: [
@@ -91,14 +105,6 @@ export default function OMKARAIMPEXFooter() {
       { label: "Blogs", href: "/blogs" },
       { label: "Careers", href: "#" },
       { label: "Contact Us", href: "/contact" },
-    ],
-    productsRange: [
-      { label: "Grains And Cereal" },
-      { label: "Pulses" },
-      { label: "Spices" },
-      { label: "Fruits" },
-      { label: "Vegetables" },
-      { label: "Dehydrated Products" },
     ],
     branches: [
       { label: "Pune", href: "#" },
@@ -251,20 +257,16 @@ export default function OMKARAIMPEXFooter() {
                 </h4>
               </div>
               <ul className="space-y-3">
-                {footerData.productsRange.map((item, index) => (
+                {categories.slice(0, 6).map((category) => (
                   <motion.li
-                    key={index}
+                    key={category.slug}
                     variants={linkVariants}
                     whileHover="hover"
                     className="flex items-center gap-2 text-slate-700 hover:text-[#FF2801] cursor-pointer transition-colors"
                   >
                     <ChevronRight size={16} className="text-[#FF2801] shrink-0" />
-                    <Link
-                      to={`/products/${item.label
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")}`}
-                    >
-                      {item.label}
+                    <Link to={`/products/${category.slug}`}>
+                      {category.name}
                     </Link>
                   </motion.li>
                 ))}
