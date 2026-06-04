@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Logo from "/reallogo1.png";
 import { SiGoogletranslate } from "react-icons/si";
+import { useProductCategories } from "../hooks/useApi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,20 +55,21 @@ export default function Navbar() {
     }
   }, []);
 
-  const productCategories = [
-    "Grains and Cereal",
-    "Pulses",
-    "Spices",
-    "Fruits",
-    "Vegetables",
-    // "Oilseeds",
-    // "Floriculture",
-    // "Herbs",
-    "Dry Fruits",
-    "Beverages",
-    "Dehydrated Products",
-    "Organic Natural Products",
+  const { data: categoriesData = [] } = useProductCategories();
+
+  const productCategoriesFallback = [
+    { name: "Grains and Cereal", slug: "grains-and-cereal" },
+    { name: "Pulses", slug: "pulses" },
+    { name: "Spices", slug: "spices" },
+    { name: "Fruits", slug: "fruits" },
+    { name: "Vegetables", slug: "vegetables" },
+    { name: "Dry Fruits", slug: "dry-fruits" },
+    { name: "Beverages", slug: "beverages" },
+    { name: "Dehydrated Products", slug: "dehydrated-products" },
+    { name: "Organic Natural Products", slug: "organic-natural-products" },
   ];
+
+  const categories = categoriesData.length > 0 ? categoriesData : productCategoriesFallback;
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleProducts = () => setIsProductsOpen(!isProductsOpen);
@@ -139,10 +141,10 @@ export default function Navbar() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2">
             <div className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4">
               {/* Contact Information - Left Side */}
-              <div className="flex flex-row items-center gap-4 sm:gap-6">
+              <div className="flex flex-row flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-6">
                 <a
                   href="tel:+919494816173"
-                  className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group"
+                  className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group whitespace-nowrap"
                 >
                   <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 group-hover:bg-white group-hover:text-[#434343] transition-all duration-300 shadow-sm">
                     <Phone size={14} />
@@ -153,8 +155,20 @@ export default function Navbar() {
                 </a>
 
                 <a
+                  href="tel:+918121414235"
+                  className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group whitespace-nowrap"
+                >
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 group-hover:bg-white group-hover:text-[#434343] transition-all duration-300 shadow-sm">
+                    <Phone size={14} />
+                  </div>
+                  <span className="text-xs sm:text-sm font-medium">
+                    +91 8121 414 235
+                  </span>
+                </a>
+
+                <a
                   href="mailto:sales@covenantpeniel.com"
-                  className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group"
+                  className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group whitespace-nowrap"
                 >
                   <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 group-hover:bg-white group-hover:text-[#434343] transition-all duration-300 shadow-sm">
                     <Mail size={14} />
@@ -287,19 +301,16 @@ export default function Navbar() {
                     >
                       All Products
                     </Link>
-                    {productCategories.map((item) => {
-                      const slug = item.toLowerCase().replace(/\s+/g, "-");
-                      return (
-                        <Link
-                          key={slug}
-                          to={`/products/${slug}`}
-                          className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-red-50 hover:text-red-700 transition"
-                          onClick={() => setIsDesktopProductsOpen(false)}
-                        >
-                          {item}
-                        </Link>
-                      );
-                    })}
+                    {categories.map((category) => (
+                      <Link
+                        key={category.slug}
+                        to={`/products/${category.slug}`}
+                        className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-red-50 hover:text-red-700 transition"
+                        onClick={() => setIsDesktopProductsOpen(false)}
+                      >
+                        {category.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
@@ -372,19 +383,16 @@ export default function Navbar() {
                   >
                     All Products
                   </Link>
-                  {productCategories.map((item) => {
-                    const slug = item.toLowerCase().replace(/\s+/g, "-");
-                    return (
-                      <Link
-                        key={slug}
-                        to={`/products/${slug}`}
-                        className="block rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-white"
-                        onClick={closeMenu}
-                      >
-                        {item}
-                      </Link>
-                    );
-                  })}
+                  {categories.map((category) => (
+                    <Link
+                      key={category.slug}
+                      to={`/products/${category.slug}`}
+                      className="block rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-white"
+                      onClick={closeMenu}
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
                 </div>
               )}
 
