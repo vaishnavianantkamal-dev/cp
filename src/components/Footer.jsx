@@ -324,16 +324,16 @@ export default function OMKARAIMPEXFooter() {
                       PHONE NUMBER:
                     </p>
                     <a
-                      href="tel:+919494816173"
-                      className="block text-slate-700 text-sm hover:text-[#FF2801] transition-colors"
-                    >
-                      +91 94948 16173
-                    </a>
-                    <a
                       href="tel:+918121414235"
                       className="block text-slate-700 text-sm hover:text-[#FF2801] transition-colors"
                     >
                       +91 8121 414 235
+                    </a>
+                    <a
+                      href="tel:+919494816173"
+                      className="block text-slate-700 text-sm hover:text-[#FF2801] transition-colors"
+                    >
+                      +91 94948 16173
                     </a>
                     <p className="text-slate-500 text-xs mt-1">
                       GSTIN: 37AAJCC1186B1ZV

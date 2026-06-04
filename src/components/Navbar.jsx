@@ -143,14 +143,14 @@ export default function Navbar() {
               {/* Contact Information - Left Side */}
               <div className="flex flex-row flex-wrap items-center justify-center md:justify-start gap-3 sm:gap-6">
                 <a
-                  href="tel:+919494816173"
+                  href="tel:+918121414235"
                   className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group whitespace-nowrap"
                 >
                   <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 group-hover:bg-white group-hover:text-[#434343] transition-all duration-300 shadow-sm">
                     <Phone size={14} />
                   </div>
                   <span className="text-xs sm:text-sm font-medium">
-                    +91 94948 16173
+                    +91 8121 414 235
                   </span>
                 </a>
 
