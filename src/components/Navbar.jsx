@@ -155,18 +155,6 @@ export default function Navbar() {
                 </a>
 
                 <a
-                  href="tel:+918121414235"
-                  className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group whitespace-nowrap"
-                >
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 group-hover:bg-white group-hover:text-[#434343] transition-all duration-300 shadow-sm">
-                    <Phone size={14} />
-                  </div>
-                  <span className="text-xs sm:text-sm font-medium">
-                    +91 8121 414 235
-                  </span>
-                </a>
-
-                <a
                   href="mailto:sales@covenantpeniel.com"
                   className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group whitespace-nowrap"
                 >
