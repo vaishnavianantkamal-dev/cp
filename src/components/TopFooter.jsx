@@ -15,13 +15,13 @@ const TopFooter = () => {
           {/* Contact Information - Left Side */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <a
-              href="tel:+918885111263"
+              href="tel:+919494816173"
               className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group"
             >
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 group-hover:bg-white group-hover:text-[#434343] transition-all duration-300 shadow-md">
                 <Phone size={16} />
               </div>
-              <span className="text-sm font-medium">+91 8885 111 263</span>
+              <span className="text-sm font-medium">+91 94948 16173</span>
             </a>
 
             <a

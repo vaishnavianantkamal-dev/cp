@@ -165,7 +165,7 @@ export default function OMKARAIMPEXFooter() {
                   {
                     icon: Facebook,
                     label: "Facebook",
-                    url: "https://www.facebook.com/share/1DRvGZ16Nj/?mibextid=wwXIfr",
+                    url: "#",
                   },
                   // {
                   //   icon: Youtube,
@@ -175,12 +175,12 @@ export default function OMKARAIMPEXFooter() {
                   {
                     icon: Instagram,
                     label: "Instagram",
-                    url: "https://www.instagram.com/oceanmark_exim?igsh=NXh2MDlxZjI1MXBs&utm_source=qr",
+                    url: "#",
                   },
                   {
                     icon: Linkedin,
                     label: "LinkedIn",
-                    url: "https://www.linkedin.com/in/rohit-nikumbh-483518366/",
+                    url: "#",
                   },
                 ].map((social, index) => (
                   <motion.a
@@ -321,12 +321,18 @@ export default function OMKARAIMPEXFooter() {
                     <p className="font-semibold text-slate-900 text-sm mb-1">
                       PHONE NUMBER:
                     </p>
-                    <p className="text-slate-700 text-sm hover:text-[#FF2801] cursor-pointer transition-colors">
-                      +91 8885 111 263
-                    </p>
-                    <p className="text-slate-700 text-sm hover:text-[#FF2801] cursor-pointer transition-colors">
+                    <a
+                      href="tel:+919494816173"
+                      className="block text-slate-700 text-sm hover:text-[#FF2801] transition-colors"
+                    >
+                      +91 94948 16173
+                    </a>
+                    <a
+                      href="tel:+918121414235"
+                      className="block text-slate-700 text-sm hover:text-[#FF2801] transition-colors"
+                    >
                       +91 8121 414 235
-                    </p>
+                    </a>
                     <p className="text-slate-500 text-xs mt-1">
                       GSTIN: 37AAJCC1186B1ZV
                     </p>

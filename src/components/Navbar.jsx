@@ -141,14 +141,14 @@ export default function Navbar() {
               {/* Contact Information - Left Side */}
               <div className="flex flex-row items-center gap-4 sm:gap-6">
                 <a
-                  href="tel:+918885111263"
+                  href="tel:+919494816173"
                   className="flex items-center gap-2 hover:text-gray-100 transition-all duration-300 group"
                 >
                   <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 group-hover:bg-white group-hover:text-[#434343] transition-all duration-300 shadow-sm">
                     <Phone size={14} />
                   </div>
                   <span className="text-xs sm:text-sm font-medium">
-                    +91 8885 111 263
+                    +91 94948 16173
                   </span>
                 </a>
 
@@ -190,7 +190,7 @@ export default function Navbar() {
                 </div>
 
                 <a
-                  href="https://www.facebook.com/share/1DRvGZ16Nj/?mibextid=wwXIfr"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Facebook page"
@@ -210,7 +210,7 @@ export default function Navbar() {
                 </a> */}
 
                 <a
-                  href="https://www.instagram.com/oceanmark_exim?igsh=NXh2MDlxZjI1MXBs&utm_source=qr"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our Instagram page"
@@ -220,7 +220,7 @@ export default function Navbar() {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/rohit-nikumbh-483518366/"
+                  href="#"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit our LinkedIn page"
